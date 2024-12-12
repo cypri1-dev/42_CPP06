@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   colors.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 17:16:52 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/12 14:23:17 by cyferrei         ###   ########.fr       */
+/*   Created: 2024/12/05 15:13:40 by cyferrei          #+#    #+#             */
+/*   Updated: 2024/12/05 15:13:44 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+#ifndef COLORS_HPP
+#define COLORS_HPP
 
-#include <string>
-#include <limits>
-#include <iostream>
-
-class ScalarConverter {
-	public:
-		ScalarConverter();
-		ScalarConverter(const ScalarConverter &other);
-		ScalarConverter &operator=(const ScalarConverter &other);
-		~ScalarConverter();
-
-		static void convert(const std::string &literal);
-};
+#define BOLD_ON "\033[1m"
+#define BOLD_OFF "\033[0m"
+#define YELLOW "\033[33m"
+#define RESET "\033[0m"
+#define GREEN "\033[32m"
+#define RED "\033[31m"
+#define BLUE "\033[34m"
 
 #endif
