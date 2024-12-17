@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:16:52 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/12 14:23:17 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:33:52 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ class ScalarConverter {
 
 		static void convert(const std::string &literal);
 };
+
+bool is_valid_number(const std::string &literal);
 
 #endif
