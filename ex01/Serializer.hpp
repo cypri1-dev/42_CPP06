@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 15:53:04 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/17 17:16:29 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:54:40 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define SERIALIZER_HPP
 
 #include "Data.hpp"
-#include <cstdint>
+// #include <cstdint>
+#include <stdint.h>
 
 class Serializer {
 	public:

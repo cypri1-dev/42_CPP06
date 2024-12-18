@@ -6,13 +6,12 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 15:53:01 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/17 17:14:41 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:51:33 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 #include "Data.hpp"
-#include <cstdint>
 
 Serializer::Serializer() {}
 

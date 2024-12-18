@@ -6,14 +6,14 @@
 #    By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/17 15:52:59 by cyferrei          #+#    #+#              #
-#    Updated: 2024/12/17 17:20:50 by cyferrei         ###   ########.fr        #
+#    Updated: 2024/12/18 14:51:17 by cyferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Serializer
 RM = rm -rf
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 SRC = Serializer.cpp Data.cpp main.cpp
 
 OBJ= $(SRC:.cpp=.o)

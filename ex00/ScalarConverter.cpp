@@ -6,13 +6,14 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:16:50 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/17 15:48:06 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:55:54 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 #include "colors.hpp"
 #include <cmath>
+#include <cstdlib>
 #include <iomanip>
 #include <endian.h>
 #include <limits>

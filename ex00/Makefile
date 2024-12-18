@@ -6,14 +6,14 @@
 #    By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/10 17:16:48 by cyferrei          #+#    #+#              #
-#    Updated: 2024/12/12 13:28:04 by cyferrei         ###   ########.fr        #
+#    Updated: 2024/12/18 13:54:57 by cyferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ScalarConverter
 RM = rm -rf
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 SRC = ScalarConverter.cpp main.cpp
 
 OBJ= $(SRC:.cpp=.o)
