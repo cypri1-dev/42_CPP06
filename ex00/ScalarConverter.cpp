@@ -6,13 +6,14 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:16:50 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/18 13:55:54 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:31:44 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 #include "colors.hpp"
 #include <cmath>
+#include <cstddef>
 #include <cstdlib>
 #include <iomanip>
 #include <endian.h>
@@ -39,19 +40,19 @@ bool is_valid_number(const std::string &literal) {
 	char *end;
 	double d_value = std::strtod(literal.c_str(), &end);
 	(void)d_value;
-	
+
 	return (*end == '\0' || (*end == 'f' && *(end + 1) == '\0')) && !literal.empty();
 }
 
 void	ScalarConverter::convert(const std::string &literral) {
 	if (literral.size() == 1 && !(literral[0] >= '0' && literral[0] <= '9')) {
 		if (literral[0] > 32 && literral[0] < 126)
-			std::cout << BOLD_ON << "[char]: "<< BOLD_OFF << "'" << BOLD_ON GREEN << literral[0] << "'" << BOLD_OFF << std::endl;
+			std::cout << BOLD_ON << "[char]: "<< BOLD_OFF << "'" << BOLD_ON GREEN << static_cast<char>(literral[0]) << "'" << BOLD_OFF << std::endl;
 		else
 			std::cout << BOLD_ON YELLOW << "[char]: No printable char!" << BOLD_OFF << std::endl;
-		std::cout << BOLD_ON << "[int]: " << GREEN << (int)literral[0] << BOLD_OFF << std::endl;
-		std::cout << BOLD_ON << "[float]: " << GREEN << std::fixed << std::setprecision(1) <<(float)literral[0] <<  "f" << BOLD_OFF << std::endl;
-		std::cout << BOLD_ON << "[double]: " << GREEN << (double)literral[0] << BOLD_OFF << std::endl;
+		std::cout << BOLD_ON << "[int]: " << GREEN << static_cast<int>(literral[0]) << BOLD_OFF << std::endl;
+		std::cout << BOLD_ON << "[float]: " << GREEN << std::fixed << std::setprecision(1) <<static_cast<float>(literral[0]) <<  "f" << BOLD_OFF << std::endl;
+		std::cout << BOLD_ON << "[double]: " << GREEN << static_cast<double>(literral[0]) << BOLD_OFF << std::endl;
 		return;
 	}
 
@@ -65,7 +66,7 @@ void	ScalarConverter::convert(const std::string &literral) {
 	/*CHAR*/
 	if (d_value > 0 && d_value < 127) {
 		if ((d_value > 32 && d_value < 127))
-			std::cout << BOLD_ON << "[char]: " << BOLD_OFF << "'" << BOLD_ON GREEN << (char)d_value << BOLD_OFF << "'" << std::endl;
+			std::cout << BOLD_ON << "[char]: " << BOLD_OFF << "'" << BOLD_ON GREEN << static_cast<char>(d_value) << BOLD_OFF << "'" << std::endl;
 		else
 			std::cout << BOLD_ON YELLOW << "[char]: No printable char!" << BOLD_OFF << std::endl;
 	}
@@ -78,7 +79,7 @@ void	ScalarConverter::convert(const std::string &literral) {
 	else if (std::isnan(d_value))
 		std::cout << BOLD_ON YELLOW << "[int]: Conversion to int impossible!" << BOLD_OFF << std::endl;
 	else 
-		std::cout << BOLD_ON  << "[int]: " << GREEN << (int)d_value << BOLD_OFF << std::endl;
+		std::cout << BOLD_ON  << "[int]: " << GREEN << static_cast<int>(d_value) << BOLD_OFF << std::endl;
 
 	/*FLOAT*/
 	if (d_value == std::numeric_limits<float>::infinity() || d_value == -std::numeric_limits<float>::infinity())
@@ -89,7 +90,7 @@ void	ScalarConverter::convert(const std::string &literral) {
 		else if (std::isnan(d_value))
 			std::cout << BOLD_ON << "[float]: " << GREEN << "nanf" << BOLD_OFF << std::endl;
 		else
-			std::cout << BOLD_ON  << "[float]: " << GREEN << std::fixed << std::setprecision(1) << (float)d_value << "f" << BOLD_OFF << std::endl;
+			std::cout << BOLD_ON  << "[float]: " << GREEN << std::fixed << std::setprecision(1) << static_cast<float>(d_value) << "f" << BOLD_OFF << std::endl;
 	}
 	
 	/*DOUBLE*/
@@ -101,6 +102,6 @@ void	ScalarConverter::convert(const std::string &literral) {
 		else if (std::isnan(d_value))
 			std::cout << BOLD_ON << "[double]: " << GREEN << "nan" << BOLD_OFF << std::endl;
 		else
-			std::cout << BOLD_ON  << "[double]: " << GREEN << d_value << BOLD_OFF << std::endl;
+			std::cout << BOLD_ON  << "[double]: " << GREEN << static_cast<double>(d_value) << BOLD_OFF << std::endl;
 	}
 }

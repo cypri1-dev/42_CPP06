@@ -6,7 +6,7 @@
 /*   By: cyferrei <cyferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 17:16:52 by cyferrei          #+#    #+#             */
-/*   Updated: 2024/12/17 15:33:52 by cyferrei         ###   ########.fr       */
+/*   Updated: 2024/12/18 15:32:49 by cyferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@
 
 class ScalarConverter {
 	public:
-		ScalarConverter();
 		ScalarConverter(const ScalarConverter &other);
 		ScalarConverter &operator=(const ScalarConverter &other);
 		~ScalarConverter();
-
+	
 		static void convert(const std::string &literal);
+
+	private:
+		ScalarConverter();
 };
 
 bool is_valid_number(const std::string &literal);
